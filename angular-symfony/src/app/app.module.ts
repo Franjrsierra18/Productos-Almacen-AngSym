@@ -10,6 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AlmacenTablesComponent } from './components/almacen-tables/almacen-tables.component';
 import { MainComponent } from './components/main/main.component';
 import { FormComponent } from './components/form/form.component';
+import { RegistroComponent } from './components/registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormComponent } from './components/form/form.component';
     LoginComponent,
     AlmacenTablesComponent,
     MainComponent,
-    FormComponent
+    FormComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,

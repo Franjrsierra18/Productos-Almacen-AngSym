@@ -24,7 +24,7 @@ export class AlmacenTablesComponent {
   getProducts() {
     this.apiService.getProducts().subscribe(
       res => {
-        this.products = res;
+        this.products = res.reverse();
         console.log(this.products)
       },
       error => console.log(error)
