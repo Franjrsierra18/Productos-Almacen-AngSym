@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Product } from '../../Product';
 @Component({
@@ -16,7 +16,7 @@ export class FormComponent {
   
   public paramsSubscription: Subscription;
   constructor(public apiService: ApiService,
-    public route: ActivatedRoute) { }
+    public route: ActivatedRoute, private router: Router,) { }
 
   addProduct(event): void {
     event.preventDefault();
@@ -31,7 +31,7 @@ export class FormComponent {
         this.productos = '';
         this.descripcion = '';
         this.cantidad = 0;
-        
+        this.router.navigate(['/productos']);
       });
   }
 }
