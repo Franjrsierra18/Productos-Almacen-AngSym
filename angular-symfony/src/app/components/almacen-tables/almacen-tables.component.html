@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row my-5">
+    <h2>Todos los productos</h2>
+  </div>
+  <div class="row">
+    <table class="table table-striped">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Productos</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Cantidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <th scope="row">{{product.id}}</th>
+          <td>{{product.productos}}</td>
+          <td>{{product.descripcion}}</td>
+          <td>{{product.cantidad}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
