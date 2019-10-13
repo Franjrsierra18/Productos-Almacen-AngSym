@@ -9,6 +9,7 @@ use FOS\RestBundle\Controller\Annotations as Rest;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use App\Entity\Product;
 use App\Form\ProductType;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 // use App\Form\Type\ProductType;
 
@@ -51,4 +52,39 @@ class ProductController extends FOSRestController
         }
         return $this->handleView($this->view($form->getErrors()));
     }
+
+    /**
+     * @Rest\Post("/login")
+     * @return View
+     */
+    public function login(AuthenticationUtils $authenticationUtils): Response
+    {
+        // if ($this->getUser()) {
+        //    $this->redirectToRoute('target_path');
+        // }
+
+        // get the login error if there is one
+        $error = $authenticationUtils->getLastAuthenticationError();
+        // last username entered by the user
+        $lastUsername = $authenticationUtils->getLastUsername();
+
+        // return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
+        return $this->handleView($this->view(['status'=>'ok'], Response::HTTP_CREATED));
+    }
+
+    // /**
+    //  * Creates an Article resource
+    //  * @Rest\Post("/login")
+    //  * @param Request $request
+    //  * @return View
+    //  */
+    // public function postLogin(Request $request): View
+    // {
+    //     $user = new Article();
+    //     $article->setTitle($request->get('title'));
+    //     $article->setContent($request->get('content'));
+    //     $this->articleRepository->save($article);
+    //     // In case our POST was a success we need to return a 201 HTTP CREATED response
+    //     return View::create($article, Response::HTTP_CREATED);
+    // }
 }

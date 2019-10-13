@@ -9,6 +9,7 @@
           <th scope="col">Productos</th>
           <th scope="col">Descripcion</th>
           <th scope="col">Cantidad</th>
+          <th scope="col">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -16,6 +17,10 @@
           <th scope="row">{{product.productos}}</th>
           <td>{{product.descripcion}}</td>
           <td>{{product.cantidad}}</td>
+          <td>
+            <input type="button" value="Edit" class="btn btn-warning mx-1">
+            <input type="button" value="Delete" class="btn btn-danger">
+          </td>
         </tr>
       </tbody>
     </table>

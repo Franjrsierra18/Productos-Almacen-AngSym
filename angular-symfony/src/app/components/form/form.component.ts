@@ -16,7 +16,7 @@ export class FormComponent {
   
   public paramsSubscription: Subscription;
   constructor(public apiService: ApiService,
-    public route: ActivatedRoute, private router: Router,) { }
+    public route: ActivatedRoute, private router: Router) { }
 
   addProduct(event): void {
     event.preventDefault();
